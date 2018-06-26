@@ -28,7 +28,7 @@ src/loadfmt/jsonfmt/json.go
 - At present it supports JSON format objects and it will be uploaded to S3 data store.
 - In future, we can add support to more formats like YAML, XML etc by following the src/loadfmt/genericfmt.go layouts.
 - Simillarly, for data stores, we can support more stores like MYSQL, or custom store by following the src/store/genericstore.go layout.
-## Test
+## Tests
 - Unit tests and integration tests are added to both loadfmt and S3 stores. To execute the tests, follow the below steps.
 ```
 $ git clone git@github.com:mshakira/jsonuploader.git
@@ -39,3 +39,26 @@ $ go test
 PASS
 ok  	store/s3store	0.193s
 ``` 
+## Exec
+```
+$ pwd
+/home/ec2-user/jsonuploader/src
+$ go build
+$ ./uploader
+Server Starting @ [0.0.0.0:8080]
+```
+## Packaging
+- We need to package the executable to be installed in /usr/local/bin. Create the following dir structure
+```
+usr
+usr/local
+usr/local/bin
+```
+- Copy the executable `uploader` under bin
+```
+usr/local/bin/uploader
+```
+- Run the following command
+```
+fpm -n jsonuploader -s dir -t rpm -v 0.0.2 --maintainer "Shakira M" --description "My JSON Uploader" --url "https://github.com/mshakira/jsonuploader" ./usr/
+```
