@@ -23,7 +23,7 @@ src/loadfmt/jsonfmt/json.go
   - data store - `src/store`
   - package to load formats - `src/loadfmt` 
 ## Design
-![Code Design](img/design/png)
+![Code Design](img/design.png)
 - The code is designed in such a way that it can be extended if requirement rises.
 - At present it supports JSON format objects and it will be uploaded to S3 data store.
 - In future, we can add support to more formats like YAML, XML etc by following the src/loadfmt/genericfmt.go layouts.
