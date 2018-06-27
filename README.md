@@ -41,6 +41,10 @@ $ go test ./...
 ok  	loadfmt/jsonfmt	0.004s
 ?   	store	[no test files]
 ok  	store/s3store	0.205s
+```
+- To examine sucpicious constructs
+$ go vet ./...
+$
 ``` 
 ## Exec
 ```
