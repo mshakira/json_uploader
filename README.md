@@ -34,10 +34,13 @@ src/loadfmt/jsonfmt/json.go
 $ git clone git@github.com:mshakira/jsonuploader.git
 $ cd jsonuploader
 $ export GOPATH=$(pwd):$GOPATH
-$ cd src/store/s3store/
-$ go test
-PASS
-ok  	store/s3store	0.193s
+$ cd src
+$ go test ./...
+?   	_/home/ec2-user/git/jsonuploader/src	[no test files]
+?   	loadfmt	[no test files]
+ok  	loadfmt/jsonfmt	0.004s
+?   	store	[no test files]
+ok  	store/s3store	0.205s
 ``` 
 ## Exec
 ```

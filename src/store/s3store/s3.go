@@ -70,5 +70,4 @@ func (s3st *S3Store) UploadToStore(prefix string, key string, data []byte) (*s3.
 		return result, err
 	}
 
-	return result, nil
 }
